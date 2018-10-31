@@ -25,7 +25,7 @@ public class BusinessLayer {
         ContentResolver contentResoler=context.getContentResolver();
         ArrayList<DLFile> dlFiles=new FileManager().GetFilesFromData(clipData,contentResoler);
 
-        dlFiles=dlFile.s
+        Collections.sort(dlFiles);
         int fileCount=dlFiles.size();
         for(int i=0;i<fileCount-1;i++){
             String fullFilePath=dlFiles.get(i).getFullPath();
@@ -33,6 +33,9 @@ public class BusinessLayer {
             blFiles.add(new BLFile(fullFilePath,fileDurationInSeconds));
         }
 
+        String fullFilePath=dlFiles.get(fileCount-1).getFullPath();
+        long fileDurationInSeconds=GlobalFields.DurationLastImage;
+        blFiles.add(new BLFile(fullFilePath,fileDurationInSeconds));
         return blFiles;
     }
 }

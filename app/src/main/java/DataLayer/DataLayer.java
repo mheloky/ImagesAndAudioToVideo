@@ -6,7 +6,7 @@ import java.util.List;
 import BusinessLayer.BLFile;
 import DataObjects.*;
 
-public class DataLayer implements Comparable<BLFile> {
+public class DataLayer  {
 
     static AAppDatabase appDatabase;
 
@@ -70,4 +70,5 @@ public class DataLayer implements Comparable<BLFile> {
         return appDatabase.projectDBDLManager().GetAllItems();
 
     }
+
 }

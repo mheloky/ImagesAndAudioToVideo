@@ -2,7 +2,7 @@ package DataLayer;
 
 import java.util.Date;
 
-public class DLFile {
+public class DLFile implements Comparable<DLFile> {
 
     String Name;
     String Path;
@@ -34,4 +34,10 @@ public class DLFile {
         CreationDate = creationDate;
     }
 
+    @Override
+    public int compareTo(DLFile o) {
+
+         return this.getCreationDate().compareTo(o.getCreationDate());
+
+    }
 }

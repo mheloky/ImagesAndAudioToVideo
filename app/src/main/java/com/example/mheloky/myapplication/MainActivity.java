@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import DataLayer.*;
 
@@ -41,10 +42,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent){
 
-        String fileName=new FileManager().GetFilesFromData(intent.getClipData(),getContentResolver()).get(0);
+
         if(intent.getClipData()!=null) {
             if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK) {
-                Toast.makeText(MainActivity.this, "Selected Multiple Files" + fileName, Toast.LENGTH_SHORT).show();
+
+
+
             }
         }
         else{
